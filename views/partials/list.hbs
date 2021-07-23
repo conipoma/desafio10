@@ -1,0 +1,31 @@
+<h2>Lista de productos</h2>
+
+    {{#if noProducts.state}}
+
+        <h3>{{noProducts.msg}}</h3>
+    
+    {{else}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Icono/Imagen</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each productos}}
+            <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.price}}</td>
+            <td><img src="" alt="Imagen de {{this.title}}" srcset="{{this.thumbnail}}"></td>
+            <!--Imágenes desde https://www.iconfinder.com/iconsets/clothes-outfit-line-shop-aholic-->
+            </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+    {{/if}}
